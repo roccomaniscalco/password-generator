@@ -25,18 +25,18 @@ function generatePassword() {
 
 // Prompt user input
 function promptUser() {
-  password.passLength = prompt(
-    "How many characters would you like your password to consist of?"
+  password.passLength = parseInt(
+    prompt("How many characters would you like your password to consist of?")
   );
 
   // Prompts password length
   while (
     password.passLength < 8 ||
     password.passLength > 250 ||
-    typeof password.passLength != "number"
+    isNaN(password.passLength)
   ) {
-    if (password.passLength === null) {
-      break;
+    if(password.passLength === null){
+      return("")
     }
     password.passLength = prompt(
       "'" +
@@ -44,6 +44,12 @@ function promptUser() {
         "' is not a valid input. Please enter an integer in the range [8,250]."
     );
   }
+
+  // Prompts inclusion of lowercase letters
+  password.includeLowercase = prompt(
+    "Would you like your password to include lowercase letters?"
+  );
+  console.log(password.includeLowercase + "!");
 }
 
 // Add event listener to generate button
