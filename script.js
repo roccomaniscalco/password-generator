@@ -3,7 +3,6 @@ var generateBtn = document.querySelector("#generate");
 
 // Script global variables
 var password = {
-  passValue: "",
   passLength: 0,
   includeLowercase: false,
   includeUppercase: false,
@@ -110,9 +109,24 @@ function writePassword() {
   passwordText.value = password;
 }
 
-// Generate password based on use input
+// Generate password based on user input
 function generatePassword() {
+  var pass = "";
+  var alphabet = [];
+  var alphabetItem = 0;
+
   promptUser();
+
+  /* While pass is less than passLength, 
+     append alphabetsArr[random array][random array item] to pass */
+  while (pass.length < password.passLength) {
+    alphabet = alphabetsArr[Math.floor(Math.random() * alphabetsArr.length)];
+    alphabetItem = alphabet[Math.floor(Math.random() * alphabet.length)];
+    pass += String(alphabetItem);
+    console.log(alphabet);
+  }
+
+  return pass;
 }
 
 // Prompt user input
