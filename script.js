@@ -46,6 +46,23 @@ function promptUser() {
   password.includeLowercase = confirm(
     "Would you like your password to include lowercase letters?"
   );
+
+  // Confirm inclusion of uppercase letters
+  password.includeUppercase = confirm(
+    "Would you like your password to include uppercase letters?"
+  );
+
+  // Confirm inclusion of integers
+  password.includeNumbers = confirm(
+    "Would you like your password to include numbers?"
+  );
+
+  // Confirm inclusion of special characters
+  password.includeSpecialCharacters = confirm(
+    "Would you like your password to include special characters?"
+  );
+
+  console.log(password);
 }
 
 // Add event listener to generate button
