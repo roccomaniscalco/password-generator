@@ -3,13 +3,13 @@ var generateBtn = document.querySelector("#generate");
 
 // Script global variables
 var password = {
-  passValue : "",
-  passLength : 0,
-  includeLowercase : false,
-  includeUppercase : false, 
-  includeNumbers : false,
-  includeSpecialCharacters : false,
-}
+  passValue: "",
+  passLength: 0,
+  includeLowercase: false,
+  includeUppercase: false,
+  includeNumbers: false,
+  includeSpecialCharacters: false,
+};
 
 // Write password to the #password input
 function writePassword() {
@@ -25,8 +25,25 @@ function generatePassword() {
 
 // Prompt user input
 function promptUser() {
-  password.passLength = prompt("How many characters would you like your password to consist of?");
-  console.log(password.passLength+"!")
+  password.passLength = prompt(
+    "How many characters would you like your password to consist of?"
+  );
+
+  // Prompts password length
+  while (
+    password.passLength < 8 ||
+    password.passLength > 250 ||
+    typeof password.passLength != "number"
+  ) {
+    if (password.passLength === null) {
+      break;
+    }
+    password.passLength = prompt(
+      "'" +
+        password.passLength +
+        "' is not a valid input. Please enter an integer in the range [8,250]."
+    );
+  }
 }
 
 // Add event listener to generate button
