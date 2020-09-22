@@ -2,7 +2,7 @@
 var generateBtn = document.querySelector("#generate");
 
 // Script global variables
-var passLength = 0;
+var passwordLength = 0;
 var alphabetsArr = [];
 var lowerLettersArr = [
   "a",
@@ -60,7 +60,7 @@ var upperLettersArr = [
   "Y",
   "Z"
 ]
-var numbersArr = [1,2,3,4,5,6,7,8,9,0]
+var digitsArr = [1,2,3,4,5,6,7,8,9,0]
 var specialCharactersArr = [
   "!",
   "#",
@@ -104,40 +104,39 @@ function writePassword() {
 
 // Generate password based on user input
 function generatePassword() {
-  var pass = "";
-  var alphabet = [];
+  var rtn = "";
+  var currentAlphabet = [];
   var alphabetItem = 0;
   alphabetsArr = [];
 
   promptUser();
 
-  /* While pass is less than passLength, 
-     append alphabetsArr[random array][random array item] to pass */
-  while (pass.length < passLength) {
-    alphabet = alphabetsArr[Math.floor(Math.random() * alphabetsArr.length)];
-    alphabetItem = alphabet[Math.floor(Math.random() * alphabet.length)];
-    pass += String(alphabetItem);
-    console.log(alphabet);
+  /* While rtn is less than passwordLength, 
+     append alphabetsArr[random array][random array item] to rtn */
+  while (rtn.length < passwordLength) {
+    currentAlphabet = alphabetsArr[Math.floor(Math.random() * alphabetsArr.length)];
+    alphabetItem = currentAlphabet[Math.floor(Math.random() * currentAlphabet.length)];
+    rtn += String(alphabetItem);
   }
 
-  return pass;
+  return rtn;
 }
 
 // Prompt user input and add alphabets to alphabetsArr accordingly
 function promptUser() {
-  passLength = prompt(
+  passwordLength = prompt(
     "How many characters would you like your password to consist of?"
   );
 
   // Prompt password length
   while (
-    passLength < 8 ||
-    passLength > 250 ||
-    isNaN(parseInt(passLength))
+    passwordLength < 8 ||
+    passwordLength > 250 ||
+    isNaN(parseInt(passwordLength))
   ) {
-    passLength = prompt(
+    passwordLength = prompt(
       "'" +
-        passLength +
+        passwordLength +
         "' is not a valid input. Please enter an integer in the range [8,250]."
     );
   }
@@ -155,7 +154,7 @@ function promptUser() {
   // Confirm inclusion of integers
   if(confirm(
     "Would you like your password to include numbers?"
-  )){alphabetsArr.push(numbersArr)}
+  )){alphabetsArr.push(digitsArr)}
 
   // Confirm inclusion of special characters
   if(confirm(
