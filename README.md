@@ -8,17 +8,21 @@ The goal for this website is to collect user input through prompts and confirms,
 
 ![Password Generator](password-generator.png)
 
+
 ## Usage
 
-View the deployed [Password Generator!](https://roccomaniscalco.github.io/password-generator/) Respond to the prompt and confirm messages to customize your password.
+View the deployed [Password Generator](https://roccomaniscalco.github.io/password-generator/) to create a custom password.
 
 ### User Input
 
-* Password length in the range `[0-250]`
-* Inclusion of lowercase letters
-* Inclusion of uppercase letters
-* Inclusion of digits
-* Inclusion of special characters
+1.  Press generate password
+2.  Input a password length in the range `[0-250]`
+3.  Accept or decline the inclusion of...
+    *   lowercase letters
+    *   uppercase letters
+    *   digits
+    *   special characters
+
 
 ## Installation
 
@@ -26,9 +30,11 @@ View the deployed [Password Generator!](https://roccomaniscalco.github.io/passwo
 2.  Click the green code button and select method of download
 3.  Open the downloaded Responsive Portfolio repository with your choice of text-editor or IDE
 
+
 ## Credits
 
 * starting files provided by [Jonathon Watson](https://github.com/jonathanjwatson)
+
 
 ## License
 password-generator license
