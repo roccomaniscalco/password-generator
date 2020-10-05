@@ -16,7 +16,7 @@ View the deployed [Password Generator](https://roccomaniscalco.github.io/passwor
 ### User Input
 
 1.  Press generate password
-2.  Input a password length in the range `[0-250]`
+2.  Input a password length in the range `[8-128]`
 3.  Accept or decline the inclusion of...
     *   lowercase letters
     *   uppercase letters

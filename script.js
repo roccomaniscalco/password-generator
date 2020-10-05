@@ -131,7 +131,7 @@ function promptUser() {
   // Prompt password length
   while (
     passwordLength < 8 ||
-    passwordLength > 250 ||
+    passwordLength > 128 ||
     isNaN(parseInt(passwordLength))
   ) {
     passwordLength = prompt(
